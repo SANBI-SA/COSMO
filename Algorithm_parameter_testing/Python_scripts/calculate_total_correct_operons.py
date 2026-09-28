@@ -1,8 +1,8 @@
 ###############################################################################################################################
 
-# script name: calculate_ppvs.py
+# script name: calculate_total_correct_operons.py
 
-# calculates the PVVs of multiple files after finding the number of exact matches to operons from literature
+# calculates the percentage of correctly called full-length operons from multiple files after finding the number of exact matches to operons from literature
 ###############################################################################################################################
 
 # Requirements:
@@ -27,7 +27,7 @@ operon_list_dir = input("\n Enter path to list of operons: \n")
 list_files_pred_operons = glob.glob(dir_pred_operons)
 outfile_strain = dir_pred_operons.split("/")[-1] # strain with its cut-off paramaters
 #sample_name = outfile_strain.split("_")[0] # the actual name of sample or strain e.g. M2, M3
-outfile_name = outfile_strain + "_COSMO_PPV.txt"
+outfile_name = outfile_strain + "_COSMO_total_correct_operons.txt"
 out_file = open(outfile_name, "w")
 
 ################################################
@@ -89,8 +89,8 @@ for pred_op_file in list_files_pred_operons:
                     TP_list.append(operon)
                     #len_TP_list = len(TP_list)
     len_TP_list = len(TP_list)
-    PPV = len_TP_list/len(operon_list)
-    out_line = f"{strain} {CDS_cut_off} {IGR_cut_off} {CDS_cov_diff} {IGR_cov_diff} {len_TP_list} {PPV}\n"
+    Total_operons = len_TP_list/len(operon_list)
+    out_line = f"{strain} {CDS_cut_off} {IGR_cut_off} {CDS_cov_diff} {IGR_cov_diff} {len_TP_list} {Total_operons}\n"
     #out_line2 = str(TP_list)
     out_file.write(out_line)
 
