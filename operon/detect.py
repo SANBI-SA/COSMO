@@ -112,7 +112,6 @@ class Detect(Analyze):
         # Create the output directory if it does not already exist.
         os.makedirs('./output', exist_ok=True)
         fs = open(os.path.join('./output/', self.output), 'w')
-        fs = open(os.path.join('./output/', self.output), 'w')
         fs_writer = csv.writer(fs, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         gtf_process = GtfProcess(self.gtf_file)
         alignment_file = pysam.AlignmentFile(self.bam_file, 'rb')#, index_filename='test/data/test_file.bai')
