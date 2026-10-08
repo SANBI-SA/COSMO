@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from distutils.core import setup
-from setuptools import find_packages
+from setuptools import find_packages, setup
 
 classifiers = """
 Development Status :: 3 - Alpha
@@ -17,15 +16,15 @@ Operating System :: POSIX :: Linux
 setup(
     name='COSMO',
     version='0.1.0',
-    packages=find_packages(exclude=['tests']),
+    packages=find_packages(exclude=['test', 'test.*', 'tests', 'tests.*']),
+    python_requires='>=3.7',
     url='https://github.com/SANBI-SA/COSMO',
     license='GPLv3',
     author='Hocine Bendou',
     author_email='hocine@sanbi.ac.za',
     description='Tool to detect operons (relative to M. tuberculosis H37Rv) using gene expression levels.',
     keywords='Mycobacterium tuberculosis bioinformatics',
-    classifiers=classifiers,
-    package_dir={'COSMO': 'COSMO'},
+    classifiers=classifiers,   
     install_requires=[
         'pysam>=0.15.0',
     ],
@@ -35,6 +34,7 @@ setup(
     entry_points={
         'console_scripts': [
             'COSMO = operon.user_input:main',
+            'cosmo = operon.user_input:main',
         ]
     }
 )

@@ -15,19 +15,98 @@ COSMO predicts operons by calculating average coverages of the genes/CDSs and th
 The user provides four cut-offs which determine whether genes/CDSs form part of the same operon. 
 If they fail any one of these cut-offs, then they are not part of the operon.
 
+
 #### Requirements
 1. Python >= 3.7
 2. Pysam >=0.15.0
 
-#### Installation (Run from a python script)
-```
-python setup.py install  
+
+
+#### Installation on Linux
+
+**Check prerequisites**
+
+Open a terminal and run:
+
+```bash
+python3 --version
+python3 -m pip --version
 ```
 
-#### Usage (Run from command line)
+Python must be version 3.7 or later. If either command fails, install
+Python 3 or pip using your Linux distribution's instructions.
+
+**Option 1: Download and install**
+
+Click **Code → Download ZIP** near the top of this repository page,
+then extract the downloaded ZIP.
+
+In a terminal, install using the path to the extracted folder:
+
+```bash
+python3 -m pip install /path/to/COSMO-master
 ```
-user_input.py [-h] [-D GDEPTH] [-d IDEPTH] [-F GFACTOR] [-f IFACTOR]
-                     [-p PREFIX]
+
+Replace `/path/to/COSMO-master` with your actual folder path.
+You do not need to open or edit `setup.py`.
+
+**Option 2: Install directly from GitHub**
+
+In a terminal, run:
+
+```bash
+python3 -m pip install https://github.com/SANBI-SA/COSMO/archive/refs/heads/master.zip
+```
+
+No manual download or extraction is needed.
+Both options install COSMO and its required Python dependencies.
+
+**Python environments**
+
+You can use an existing virtual or Conda environment.
+If pip reports an `externally-managed-environment` error, create
+and activate a virtual environment:
+
+```bash
+python3 -m venv ~/.venvs/cosmo
+source ~/.venvs/cosmo/bin/activate
+```
+
+Then run either installation command above.
+
+If creating the environment fails because venv support is missing,
+install your distribution's Python virtual-environment package.
+
+When using this environment, activate it before running COSMO in
+a new terminal:
+
+```bash
+source ~/.venvs/cosmo/bin/activate
+```
+
+**Check installation**
+
+Run:
+
+```bash
+cosmo --help
+```
+
+If COSMO starts successfully, it displays usage instructions and
+descriptions of its inputs and options.
+
+
+
+#### Usage 
+
+Run `cosmo` in a terminal, activating your Python environment if you used
+one. Supply a coordinate-sorted, indexed BAM file and a GTF file, as shown
+below. Results are saved in an automatically created `output/` folder
+in your current directory.
+
+```
+cosmo [-h] [-D GDEPTH] [-d IDEPTH] [-F GFACTOR] [-f IFACTOR]
+                     [-o OUTPUT]
                      ref length bam gtf
 
 Detect possible genome operons using RNA expression coverages
@@ -56,7 +135,7 @@ optional arguments:
 
 Example code for running a file:
 
-python user_input.py -D 1 -d 2 -F 5.0 -f 10.0 -o Strain_5_control.csv NC_000962 4411532 /home/Sally/Input_bam_files/Strain_5_control.bam /home/Sally/Input_bam_files/NC_000962_tuberculosis.gtf
+cosmo -D 1 -d 2 -F 5.0 -f 10.0 -o Strain_5_control.csv NC_000962 4411532 /home/Sally/Input_bam_files/Strain_5_control.bam /home/Sally/Input_bam_files/NC_000962_tuberculosis.gtf
 
  Where the:
 
