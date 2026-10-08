@@ -11,13 +11,13 @@ jobs:
     
     steps:
       - name: checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
       
       - name: create environment with conda
         uses: conda-incubator/setup-miniconda@v4
         with:
           channels: conda-forge,bioconda,defaults
-          auto-activate-base: false
+          auto-activate: false
           activate-environment: cosmo
           environment-file: test/test_environment.yml
       
