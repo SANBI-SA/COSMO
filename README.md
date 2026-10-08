@@ -38,10 +38,10 @@ Python 3 or pip using your Linux distribution's instructions.
 
 **Option 1: Download and install**
 
-Visit [the COSMO repository](https://github.com/SANBI-SA/COSMO),
-click **Code → Download ZIP**, and extract the ZIP.
+Click **Code → Download ZIP** near the top of this repository page,
+then extract the downloaded ZIP.
 
-Install using the path to the extracted folder:
+In a terminal, install using the path to the extracted folder:
 
 ```bash
 python3 -m pip install /path/to/COSMO-master
@@ -52,7 +52,7 @@ You do not need to open or edit `setup.py`.
 
 **Option 2: Install directly from GitHub**
 
-Run:
+In a terminal, run:
 
 ```bash
 python3 -m pip install https://github.com/SANBI-SA/COSMO/archive/refs/heads/master.zip
@@ -73,6 +73,7 @@ source ~/.venvs/cosmo/bin/activate
 ```
 
 Then run either installation command above.
+
 If creating the environment fails because venv support is missing,
 install your distribution's Python virtual-environment package.
 
@@ -85,11 +86,14 @@ source ~/.venvs/cosmo/bin/activate
 
 **Check installation**
 
+Run:
+
 ```bash
 COSMO --help
 ```
 
-Successful startup displays the command's usage and available options.
+If COSMO starts successfully, it displays usage instructions and
+descriptions of its inputs and options.
 
 
 
