@@ -15,14 +15,83 @@ COSMO predicts operons by calculating average coverages of the genes/CDSs and th
 The user provides four cut-offs which determine whether genes/CDSs form part of the same operon. 
 If they fail any one of these cut-offs, then they are not part of the operon.
 
+
 #### Requirements
 1. Python >= 3.7
 2. Pysam >=0.15.0
 
-#### Installation (Run from a python script)
+
+
+#### Installation on Linux
+
+**Check prerequisites**
+
+Open a terminal and run:
+
+```bash
+python3 --version
+python3 -m pip --version
 ```
-python setup.py install  
+
+Python must be version 3.7 or later. If either command fails, install
+Python 3 or pip using your Linux distribution's instructions.
+
+**Option 1: Download and install**
+
+Visit [the COSMO repository](https://github.com/SANBI-SA/COSMO),
+click **Code → Download ZIP**, and extract the ZIP.
+
+Install using the path to the extracted folder:
+
+```bash
+python3 -m pip install /path/to/COSMO-master
 ```
+
+Replace `/path/to/COSMO-master` with your actual folder path.
+You do not need to open or edit `setup.py`.
+
+**Option 2: Install directly from GitHub**
+
+Run:
+
+```bash
+python3 -m pip install https://github.com/SANBI-SA/COSMO/archive/refs/heads/master.zip
+```
+
+No manual download or extraction is needed.
+Both options install COSMO and its required Python dependencies.
+
+**Python environments**
+
+You can use an existing virtual or Conda environment.
+If pip reports an `externally-managed-environment` error, create
+and activate a virtual environment:
+
+```bash
+python3 -m venv ~/.venvs/cosmo
+source ~/.venvs/cosmo/bin/activate
+```
+
+Then run either installation command above.
+If creating the environment fails because venv support is missing,
+install your distribution's Python virtual-environment package.
+
+When using this environment, activate it before running COSMO in
+a new terminal:
+
+```bash
+source ~/.venvs/cosmo/bin/activate
+```
+
+**Check installation**
+
+```bash
+COSMO --help
+```
+
+Successful startup displays the command's usage and available options.
+
+
 
 #### Usage (Run from command line)
 ```
