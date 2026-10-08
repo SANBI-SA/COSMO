@@ -97,10 +97,16 @@ descriptions of its inputs and options.
 
 
 
-#### Usage (Run from command line)
+#### Usage 
+
+Run `COSMO` in a terminal, activating your Python environment if you used
+one. Supply a coordinate-sorted, indexed BAM file and a GTF file, as shown
+below. Results are saved in an automatically created `output/` folder
+in your current directory.
+
 ```
-user_input.py [-h] [-D GDEPTH] [-d IDEPTH] [-F GFACTOR] [-f IFACTOR]
-                     [-p PREFIX]
+COSMO [-h] [-D GDEPTH] [-d IDEPTH] [-F GFACTOR] [-f IFACTOR]
+                     [-o OUTPUT]
                      ref length bam gtf
 
 Detect possible genome operons using RNA expression coverages
@@ -129,7 +135,7 @@ optional arguments:
 
 Example code for running a file:
 
-python user_input.py -D 1 -d 2 -F 5.0 -f 10.0 -o Strain_5_control.csv NC_000962 4411532 /home/Sally/Input_bam_files/Strain_5_control.bam /home/Sally/Input_bam_files/NC_000962_tuberculosis.gtf
+COSMO -D 1 -d 2 -F 5.0 -f 10.0 -o Strain_5_control.csv NC_000962 4411532 /home/Sally/Input_bam_files/Strain_5_control.bam /home/Sally/Input_bam_files/NC_000962_tuberculosis.gtf
 
  Where the:
 
