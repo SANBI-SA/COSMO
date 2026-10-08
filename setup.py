@@ -34,7 +34,7 @@ setup(
     entry_points={
         'console_scripts': [
             'COSMO = operon.user_input:main',
-            'COSMO = operon.user_input:main',
+            'cosmo = operon.user_input:main',
         ]
     }
 )
