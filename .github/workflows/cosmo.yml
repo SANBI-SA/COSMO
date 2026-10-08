@@ -13,10 +13,9 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v2
       
-      - name: create environment with mamba
-        uses: conda-incubator/setup-miniconda@v2
+      - name: create environment with conda
+        uses: conda-incubator/setup-miniconda@v4
         with:
-          mamba-version: "*"
           channels: conda-forge,bioconda,defaults
           auto-activate-base: false
           activate-environment: cosmo
@@ -30,3 +29,4 @@ jobs:
         run: |
           pip install --no-deps .
           COSMO --help
+          cosmo --help
