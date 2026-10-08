@@ -89,7 +89,7 @@ source ~/.venvs/cosmo/bin/activate
 Run:
 
 ```bash
-COSMO --help
+cosmo --help
 ```
 
 If COSMO starts successfully, it displays usage instructions and
@@ -99,13 +99,13 @@ descriptions of its inputs and options.
 
 #### Usage 
 
-Run `COSMO` in a terminal, activating your Python environment if you used
+Run `cosmo` in a terminal, activating your Python environment if you used
 one. Supply a coordinate-sorted, indexed BAM file and a GTF file, as shown
 below. Results are saved in an automatically created `output/` folder
 in your current directory.
 
 ```
-COSMO [-h] [-D GDEPTH] [-d IDEPTH] [-F GFACTOR] [-f IFACTOR]
+cosmo [-h] [-D GDEPTH] [-d IDEPTH] [-F GFACTOR] [-f IFACTOR]
                      [-o OUTPUT]
                      ref length bam gtf
 
@@ -135,7 +135,7 @@ optional arguments:
 
 Example code for running a file:
 
-COSMO -D 1 -d 2 -F 5.0 -f 10.0 -o Strain_5_control.csv NC_000962 4411532 /home/Sally/Input_bam_files/Strain_5_control.bam /home/Sally/Input_bam_files/NC_000962_tuberculosis.gtf
+cosmo -D 1 -d 2 -F 5.0 -f 10.0 -o Strain_5_control.csv NC_000962 4411532 /home/Sally/Input_bam_files/Strain_5_control.bam /home/Sally/Input_bam_files/NC_000962_tuberculosis.gtf
 
  Where the:
 
