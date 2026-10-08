@@ -1,5 +1,7 @@
 # COSMO
 
+COSMO is registered in the [bio.tools registry](https://bio.tools/cosmo) (biotools:cosmo).
+
 To cite: [![DOI](https://zenodo.org/badge/182076507.svg)](https://zenodo.org/badge/latestdoi/182076507)
 
 Condition-specific Mapping of Operons (COSMO) is a tool for detecting operons in microorganisms
